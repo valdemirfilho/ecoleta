@@ -6,8 +6,9 @@
 }
 
 #page-home {
-  background: url('../assets/home-background.svg') no-repeat;
-  background-position: 35vw bottom;
+  /* background: url('../assets/home-background.svg') no-repeat;
+  background-position: right bottom;
+  background-size: contain; */
   height: 100vh;
 }
 
@@ -35,11 +36,27 @@
 }
 
 #page-home main {
-  max-width: 560px;
+  /* max-width: 560px; */
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+}
+
+#page-home main .wrapper {
   display: flex;
   flex-direction: column;
   flex: 1;
-  justify-content: center;
+}
+
+#page-home main .bg-image {
+  background: url('../assets/home-background.svg') no-repeat;
+  display: flex;
+  flex: 2;
+  background-position: right center;
+  background-size: contain;
+  height: 100%; 
 }
 
 #page-home main p {

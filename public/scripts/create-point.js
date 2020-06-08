@@ -1,7 +1,6 @@
 function populateUFs() {
   const ufSelect = document.querySelector("select[name=uf]")
 
-
   fetch("https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome")
     .then( res =>  res.json() )
     .then( states => {
@@ -37,7 +36,7 @@ function getCities(event) {
     for ( const city of cities ) {
       // citySelect.innerHTML += `<option value="${city.id}">${city.nome}</option>`
       const newElement = document.createElement('option')
-      newElement.value = city.id
+      newElement.value = city.nome
       newElement.innerText = city.nome
       optCities.appendChild(newElement)
     }
@@ -88,7 +87,9 @@ function handleSelectedItem(event) {
   }
 
   // atualizar o campo escondido com os itens selecionados
-  collectedItems.value = selectedItems
+  collectedItems.value = selectedItems.toString().replace(/,/g, ", ")
+
+  
 }
 
 

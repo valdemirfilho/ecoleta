@@ -1,3 +1,19 @@
+body {
+  background: white;
+}
+
+body::after {
+    content: "";
+    background: #f0f0f5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    height: 16rem;
+}
+
 #page-search-results {
   width: 90%;
   max-width: 1100px;
@@ -207,15 +223,4 @@ main .card p {
   font-size: 16px; 
   line-height: 26px;
   color: #6C6C80;
-}
-
-body::after {
-  content: "";
-  background: white;
-  position: fixed;
-  top: 260px;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
 }
