@@ -16,7 +16,7 @@ server.use(express.static("public"))
 //habilitar o uso do req.body
 server.use(express.urlencoded({ extended: true }))
 
-server.get("/", function(req, res) {
+server.get("/", function (req, res) {
   return res.render("index.html")
 })
 
@@ -59,8 +59,8 @@ server.post("/save-point", (req, res) => {
     return res.render("create-point.html", { saved: true })
   }
 
-   // 2.Inserindo os dados na tabela
-  db.run(query, values, afterInsertData) 
+  // 2.Inserindo os dados na tabela
+  db.run(query, values, afterInsertData)
 
   console.log(req.body)
 
@@ -74,7 +74,7 @@ server.get("/search-results", (req, res) => {
     return res.render("search-results.html", { totalPoints: 0 })
   }
 
-  db.all(`SELECT * FROM places WHERE city LIKE '%${search}%'`, function(error, rows) {
+  db.all(`SELECT * FROM places WHERE city LIKE '%${search}%'`, function (error, rows) {
     if (error) {
       return console.log(error)
     }
@@ -87,4 +87,4 @@ server.get("/search-results", (req, res) => {
   })
 })
 
-server.listen(3000)
+server.listen(3333)
